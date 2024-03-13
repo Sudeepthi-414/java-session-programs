@@ -1,0 +1,12 @@
+class OverflowUnderflowDemo {
+    public static void main(String[] args) {
+        int intValue = Integer.MAX_VALUE;
+        System.out.println("Initial int value: " + intValue);
+        intValueSyst = intValue + 1;
+        System.out.println("Overflowed int value: " + intValue);
+        byte byteValue = Byte.MIN_VALUE; 
+   em.out.println("Initial byte value: " + byteValue);
+        byteValue = (byte) (byteValue - 1);
+        System.out.println("Underflowed byte value: " + byteValue);
+    }
+}
