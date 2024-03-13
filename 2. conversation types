@@ -1,0 +1,17 @@
+class ImplicitConversionDemo {
+    public static void main(String[] args) {
+        // Smaller data types
+        byte byteVar = 10;
+        short shortVar = 100;
+        int intVar = 1000;
+        float floatVar = 3.14f;
+        int intResult1 = byteVar;
+        long longResult1 = shortVar;
+        double doubleResult1 = intVar;
+        double doubleResult2 = floatVar;
+        System.out.println("Implicit conversion from byte to int: " + intResult1);
+        System.out.println("Implicit conversion from short to long: " + longResult1);
+        System.out.println("Implicit conversion from int to double: " + doubleResult1);
+        System.out.println("Implicit conversion from float to double: " + doubleResult2);
+    }
+}
