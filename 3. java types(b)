@@ -1,0 +1,13 @@
+class ExplicitConversionDemo {
+    public static void main(String[] args) {
+        int intVar = 1000;
+        long longVar = 100000L;
+        double doubleVar = 3.141592653589793;
+        byte byteResult1 = (byte) intVar;
+        short shortResult1 = (short) longVar;
+        int intResult1 = (int) doubleVar;
+        System.out.println("Explicit conversion from int to byte: " + byteResult1);
+        System.out.println("Explicit conversion from long to short: " + shortResult1);
+        System.out.println("Explicit conversion from double to int: " + intResult1);
+    }
+}
