@@ -1,0 +1,29 @@
+class Base {
+    // Method to calculate area of a square
+    public void area(int a, int b) {
+        int squareArea = a * a;
+        System.out.println("Area of the square: " + squareArea);
+    }
+}
+
+class Derived extends Base {
+    // Method overriding to calculate area of a rectangle
+    @Override
+    public void area(int length, int breadth) {
+        int rectangleArea = length * breadth;
+        System.out.println("Area of the rectangle: " + rectangleArea);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Base baseObj = new Base();
+        Derived derivedObj = new Derived();
+
+        // Calling area method of Base class (square)
+        baseObj.area(5, 5);
+
+        // Calling area method of Derived class (rectangle)
+        derivedObj.area(6, 4);
+    }
+}
