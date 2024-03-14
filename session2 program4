@@ -1,0 +1,30 @@
+public class OverloadingDemo {
+    // Method overloading by increasing and decreasing the number of parameters
+    public int sum(int a, int b) {
+        return a + b;
+    }
+
+    public int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method overloading by changing the data types of parameters
+    public double sum(double a, double b) {
+        return a + b;
+    }
+
+    // Method overloading by interchanging the parameters
+    public int sum(int b, int a) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        OverloadingDemo demo = new OverloadingDemo();
+
+        // Testing method overloading
+        System.out.println("Sum of 2 and 3: " + demo.sum(2, 3));
+        System.out.println("Sum of 2, 3, and 4: " + demo.sum(2, 3, 4));
+        System.out.println("Sum of 2.5 and 3.5: " + demo.sum(2.5, 3.5));
+        System.out.println("Sum of 3 and 4 (interchanged parameters): " + demo.sum(3, 4));
+    }
+}
