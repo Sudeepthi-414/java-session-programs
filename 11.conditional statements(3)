@@ -1,0 +1,22 @@
+public class AgeCalculator {
+    public static void main(String[] args) {
+        // Given ages
+        int agePerson = 28;
+        int ageYoungerBrother = 24;
+        
+        // Calculate age difference
+        int ageDifference = agePerson - ageYoungerBrother;
+        
+        // Calculate the age when older brother is 56
+        int ageOlderBrother = 56;
+        int agePersonWhenOlderBrotherIs56 = agePerson + (ageOlderBrother - ageYoungerBrother);
+        System.out.println("When the older brother is 56, the person's age will be: " + agePersonWhenOlderBrotherIs56);
+        
+        // Check if the age difference is more than 3
+        if (ageDifference > 3) {
+            // Calculate the age of younger brother when older brother was 5
+            int ageOlderBrotherWhenYoungerBrotherWas5 = 5 + ageDifference;
+            System.out.println("When the older brother was 5, the younger brother's age was: " + ageOlderBrotherWhenYoungerBrotherWas5);
+        }
+    }
+}
