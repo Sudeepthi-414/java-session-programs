@@ -1,0 +1,75 @@
+import java.util.Arrays;
+
+// Abstract class with two abstract methods
+abstract class AbstractStats {
+    abstract int total(int[] arr);
+
+    abstract double average(int[] arr);
+
+    // Concrete method to calculate mean
+    double mean(int[] arr) {
+        return total(arr) / (double) arr.length;
+    }
+
+    // Concrete method to calculate mode
+    int mode(int[] arr) {
+        int maxCount = 0, mode = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] == arr[i])
+                    count++;
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mode = arr[i];
+            }
+        }
+        return mode;
+    }
+
+    // Concrete method to calculate median
+    double median(int[] arr) {
+        Arrays.sort(arr);
+        int len = arr.length;
+        if (len % 2 != 0)
+            return arr[len / 2];
+        else
+            return (arr[len / 2 - 1] + arr[len / 2]) / 2.0;
+    }
+}
+
+// Concrete class extending the abstract class
+class StatsCalculator extends AbstractStats {
+
+    @Override
+    int total(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    @Override
+    double average(int[] arr) {
+        return total(arr) / (double) arr.length;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int[] data = {5, 3, 2, 7, 7, 8, 6, 4, 9};
+
+        StatsCalculator calculator = new StatsCalculator();
+
+        // Using abstract methods
+        System.out.println("Total: " + calculator.total(data));
+        System.out.println("Average: " + calculator.average(data));
+
+        // Using concrete methods
+        System.out.println("Mean: " + calculator.mean(data));
+        System.out.println("Mode: " + calculator.mode(data));
+        System.out.println("Median: " + calculator.median(data));
+    }
+}
