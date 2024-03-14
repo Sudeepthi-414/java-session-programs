@@ -1,0 +1,21 @@
+public class GreatestLoopValue {
+    public static void main(String[] args) {
+        int value1 = 10;
+        int value2 = 20;
+        int value3 = 15;
+
+        if (value1 >= value2) {
+            if (value1 >= value3) {
+                System.out.println("The greatest value is in the first loop: value1 = " + value1);
+            } else {
+                System.out.println("The greatest value is in the third loop: value3 = " + value3);
+            }
+        } else {
+            if (value2 >= value3) {
+                System.out.println("The greatest value is in the second loop: value2 = " + value2);
+            } else {
+                System.out.println("The greatest value is in the third loop: value3 = " + value3);
+            }
+        }
+    }
+}
