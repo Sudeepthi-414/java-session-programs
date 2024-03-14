@@ -1,0 +1,97 @@
+class Parent {
+    // Method to print even numbers
+    public void even() {
+        System.out.println("Even numbers (Parent):");
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Method to print odd numbers
+    public void odd() {
+        System.out.println("Odd numbers (Parent):");
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Method to print prime numbers
+    public void prime() {
+        System.out.println("Prime numbers (Parent):");
+        for (int i = 1; i <= 20; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Utility method to check if a number is prime
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+class Child extends Parent {
+    // Method overriding to print even numbers up to 30
+    @Override
+    public void even() {
+        System.out.println("Even numbers (Child):");
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Method overriding to print odd numbers up to 30
+    @Override
+    public void odd() {
+        System.out.println("Odd numbers (Child):");
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // Method overriding to print prime numbers up to 30
+    @Override
+    public void prime() {
+        System.out.println("Prime numbers (Child):");
+        for (int i = 1; i <= 30; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating object of Child class
+        Child childObj = new Child();
+
+        // Accessing methods using Child class object
+        childObj.even();
+        childObj.odd();
+        childObj.prime();
+    }
+}
