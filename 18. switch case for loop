@@ -1,0 +1,32 @@
+public class ShortestPathFinder {
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {6, 7, 8, 9, 10, 11, 12};
+
+        int shortestPath = findShortestPath(array1, array2);
+
+        switch (shortestPath) {
+            case 1:
+                System.out.println("The first loop is the shortest path.");
+                break;
+            case 2:
+                System.out.println("The second loop is the shortest path.");
+                break;
+            default:
+                System.out.println("Both loops have the same length.");
+        }
+    }
+
+    public static int findShortestPath(int[] array1, int[] array2) {
+        int loop1Length = array1.length;
+        int loop2Length = array2.length;
+
+        if (loop1Length < loop2Length) {
+            return 1;
+        } else if (loop1Length > loop2Length) {
+            return 2;
+        } else {
+            return 0;
+        }
+    }
+}
