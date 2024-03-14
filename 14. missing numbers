@@ -1,0 +1,22 @@
+public class MissingNumbersSeries {
+    public static void main(String[] args) {
+        int[] series = {1, 5, 11, 19};
+
+        System.out.println("Missing numbers in the series:");
+        findMissingNumbers(series);
+    }
+
+    public static void findMissingNumbers(int[] series) {
+        int diff = 4; // Initial difference
+        int prev = series[0]; // Initialize previous number in the series
+
+        for (int i = 1; i < series.length; i++) {
+            int current = series[i];
+            while (prev + diff != current) {
+                System.out.print((prev + diff) + " ");
+                diff += 2; // Increase difference by 2
+            }
+            prev = current;
+        }
+    }
+}
