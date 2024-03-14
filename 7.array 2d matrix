@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class MatrixCreator {
+    public static void main(String[] args) {
+        int rows = 3;
+        int cols = 4;
+
+        // Create a 2D matrix
+        int[][] matrix = new int[rows][cols];
+
+        // Fill the matrix with some sample values
+        int value = 1;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrix[i][j] = value++;
+            }
+        }
+
+        // Print the matrix using Arrays.deepToString()
+        System.out.println("Matrix:");
+        System.out.println(Arrays.deepToString(matrix));
+    }
+}
