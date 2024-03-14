@@ -1,0 +1,35 @@
+class Demo {
+    int a;
+    int b;
+
+    // Default constructor
+    Demo() {
+        a = 10;
+        b = 15;
+    }
+
+    // Parameterized constructor
+    Demo(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+    // Method to display values of a and b
+    void disp() {
+        System.out.println("a = " + a + ", b = " + b);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating object using default constructor
+        Demo obj1 = new Demo();
+        System.out.println("Values initialized using default constructor:");
+        obj1.disp();
+
+        // Creating object using parameterized constructor
+        Demo obj2 = new Demo(20, 25);
+        System.out.println("Values initialized using parameterized constructor:");
+        obj2.disp();
+    }
+}
