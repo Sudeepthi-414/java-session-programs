@@ -1,0 +1,11 @@
+import java.util.Date;
+
+public class SystemDateTime {
+    public static void main(String[] args) {
+        // Create a Date object representing the current date and time
+        Date currentDate = new Date();
+        
+        // Print the current date and time
+        System.out.println("System Date and Time: " + currentDate);
+    }
+}
