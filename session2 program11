@@ -1,0 +1,44 @@
+public class MyClass {
+    // Instance variable
+    private int value;
+    
+    // Constructor with parameter
+    public MyClass(int value) {
+        // Referencing instance variable using 'this'
+        this.value = value;
+    }
+    
+    // Another constructor invoking the constructor with parameter
+    public MyClass() {
+        this(0); // Invoking another constructor
+    }
+    
+    // Method to pass current object as a parameter
+    public void passObject(MyClass obj) {
+        System.out.println("Value of passed object: " + obj.getValue());
+    }
+    
+    // Method to return current object
+    public MyClass returnObject() {
+        return this; // Returning current object
+    }
+    
+    // Getter method for value
+    public int getValue() {
+        return this.value;
+    }
+    
+    public static void main(String[] args) {
+        // Creating object of MyClass
+        MyClass obj1 = new MyClass(10);
+        
+        // Calling method to pass current object as a parameter
+        obj1.passObject(obj1);
+        
+        // Calling method to return current object
+        MyClass obj2 = obj1.returnObject();
+        
+        // Accessing instance variable using the returned object
+        System.out.println("Value of returned object: " + obj2.getValue());
+    }
+}
