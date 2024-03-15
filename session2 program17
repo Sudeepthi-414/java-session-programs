@@ -1,0 +1,43 @@
+import java.util.Scanner;
+import java.time.LocalTime;
+
+public class InputScanner {
+    public static void main(String[] args) {
+        // Get current time
+        LocalTime currentTime = LocalTime.now();
+        
+        // Check if current time is between 01:00 PM and 02:00 PM
+        if (currentTime.isAfter(LocalTime.of(13, 0)) && currentTime.isBefore(LocalTime.of(14, 0))) {
+            Scanner scanner = new Scanner(System.in);
+
+            // Get char input
+            System.out.print("Enter a character: ");
+            char ch = scanner.next().charAt(0);
+            System.out.println("You entered: " + ch);
+
+            // Get string input
+            System.out.print("Enter a string: ");
+            String str = scanner.next();
+            System.out.println("You entered: " + str);
+
+            // Get int input
+            System.out.print("Enter an integer: ");
+            int numInt = scanner.nextInt();
+            System.out.println("You entered: " + numInt);
+
+            // Get float input
+            System.out.print("Enter a float: ");
+            float numFloat = scanner.nextFloat();
+            System.out.println("You entered: " + numFloat);
+
+            // Get double input
+            System.out.print("Enter a double: ");
+            double numDouble = scanner.nextDouble();
+            System.out.println("You entered: " + numDouble);
+
+            scanner.close();
+        } else {
+            System.out.println("This program can only accept input between 01:00 PM and 02:00 PM.");
+        }
+    }
+}
