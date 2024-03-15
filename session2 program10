@@ -1,0 +1,37 @@
+// Final class (cannot be subclassed)
+final class FinalClass {
+    // Final variable (cannot be reassigned)
+    final int finalVariable = 10;
+    
+    // Final method (cannot be overridden)
+    final void finalMethod() {
+        System.out.println("Inside final method");
+    }
+}
+
+// Attempt to extend final class (will result in compilation error)
+/*
+class AnotherClass extends FinalClass {
+}
+*/
+
+// Attempt to override final method (will result in compilation error)
+/*
+class AnotherClass {
+    void finalMethod() {
+    }
+}
+*/
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating object of FinalClass
+        FinalClass finalObj = new FinalClass();
+        
+        // Accessing final variable
+        System.out.println("Value of finalVariable: " + finalObj.finalVariable);
+        
+        // Calling final method
+        finalObj.finalMethod();
+    }
+}
