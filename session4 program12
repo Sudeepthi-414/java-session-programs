@@ -1,0 +1,48 @@
+// Bank class
+class Bank {
+    // Method to get the rate of interest
+    double getRateOfInterest() {
+        return 0;
+    }
+}
+
+// SBI class extending Bank
+class SBI extends Bank {
+    // Override the getRateOfInterest method
+    @Override
+    double getRateOfInterest() {
+        return 8.4;
+    }
+}
+
+// ICICI class extending Bank
+class ICICI extends Bank {
+    // Override the getRateOfInterest method
+    @Override
+    double getRateOfInterest() {
+        return 7.3;
+    }
+}
+
+// AXIS class extending Bank
+class AXIS extends Bank {
+    // Override the getRateOfInterest method
+    @Override
+    double getRateOfInterest() {
+        return 9.7;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of each bank
+        SBI sbi = new SBI();
+        ICICI icici = new ICICI();
+        AXIS axis = new AXIS();
+
+        // Displaying the rate of interest for each bank
+        System.out.println("Rate of Interest for SBI: " + sbi.getRateOfInterest() + "%");
+        System.out.println("Rate of Interest for ICICI: " + icici.getRateOfInterest() + "%");
+        System.out.println("Rate of Interest for AXIS: " + axis.getRateOfInterest() + "%");
+    }
+}
