@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+public class PerfectNumbers {
+    
+    // Function to check if a number is perfect
+    public static boolean isPerfect(int num) {
+        int sum = 1; // Since 1 is always a proper divisor
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                sum += i;
+                if (i != num / i) // Avoid adding the square root twice
+                    sum += num / i;
+            }
+        }
+        return sum == num;
+    }
+    
+    // Function to print the first n perfect numbers
+    public static void printPerfectNumbers(int n) {
+        ArrayList<Integer> perfectNumbers = new ArrayList<>();
+        int number = 1;
+        while (perfectNumbers.size() < n) {
+            if (isPerfect(number)) {
+                perfectNumbers.add(number);
+                System.out.println(number);
+            }
+            number++;
+        }
+    }
+    
+    // Main method
+    public static void main(String[] args) {
+        int n = 5; // Change n to the desired number of perfect numbers
+        System.out.println("First " + n + " perfect numbers:");
+        printPerfectNumbers(n);
+    }
+}
