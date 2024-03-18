@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class NumberAverage {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int positiveCount = 0;
+        int positiveSum = 0;
+        int negativeCount = 0;
+        int negativeSum = 0;
+
+        System.out.println("Enter numbers (Enter -1 to stop):");
+
+        while (true) {
+            int num = scanner.nextInt();
+            if (num == -1) {
+                break; // Exit the loop if -1 is encountered
+            } else if (num >= 0) {
+                positiveCount++;
+                positiveSum += num;
+            } else {
+                negativeCount++;
+                negativeSum += num;
+            }
+        }
+
+        if (positiveCount > 0) {
+            double positiveAverage = (double) positiveSum / positiveCount;
+            System.out.println("Average of positive numbers: " + positiveAverage);
+        } else {
+            System.out.println("No positive numbers entered.");
+        }
+
+        if (negativeCount > 0) {
+            double negativeAverage = (double) negativeSum / negativeCount;
+            System.out.println("Average of negative numbers: " + negativeAverage);
+        } else {
+            System.out.println("No negative numbers entered.");
+        }
+
+        scanner.close();
+    }
+}
