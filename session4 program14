@@ -1,0 +1,41 @@
+class MultiplicationTableThread extends Thread {
+    private int multiplier;
+
+    public MultiplicationTableThread(int multiplier) {
+        this.multiplier = multiplier;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Thread " + Thread.currentThread().getName() + " is running.");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(multiplier + " * " + i + " = " + (multiplier * i));
+            try {
+                Thread.sleep(1000); // Sleep for 1 second
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Thread " + Thread.currentThread().getName() + " has finished.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MultiplicationTableThread table5Thread = new MultiplicationTableThread(5);
+        MultiplicationTableThread table10Thread = new MultiplicationTableThread(10);
+
+        System.out.println("Starting threads...");
+        table5Thread.start();
+        table10Thread.start();
+
+        try {
+            table5Thread.join(); // Wait for table5Thread to finish
+            table10Thread.join(); // Wait for table10Thread to finish
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Main thread is finished.");
+    }
+}
